@@ -11,11 +11,15 @@
 		margin: auto;
 		min-height: 256px;
 		text-align: center;
-		width: 80%;
+		width: 60%;
 	}
 
 	.hero *{
 		padding: 8px;
+	}
+
+	.hero a{
+		padding: 0px;
 	}
 
 	.hero h1{
@@ -38,6 +42,7 @@
 		<h3>It looks like this page is missing, just like:</h3>
 		<h2 id="name">John Doe</h2>
 		<img id="portrait" />
+		<p id="desc"></p>
 	</div>
 
 	<script>
@@ -123,8 +128,11 @@
 					var response = JSON.parse(request.responseText);
 					var person = response.persons[Math.floor(response.persons.length * Math.random())];
 
-					document.getElementById('name').innerHTML = person.firstName + " " + person.middleName + " " + person.lastName;
+					var fullName = person.firstName + " " + person.middleName + " " + person.lastName;
+
+					document.getElementById('name').innerHTML = fullName;
 					document.getElementById('portrait').src = ("http://missingkids.org" + person.thumbnailUrl).replace("t.jpg", ".jpg");
+					document.getElementById('desc').innerHTML = fullName + " was last scene in " + person.missingCity + ", " + person.missingState + " on " + person.missingDate + ". (S)he is currently " + person.age + '. If you have any information, please contact the <a href="http://www.missingkids.org/CyberTipline">National Center for Missing and Exploited Children</a>. You can also call them at 1-800-THE-LOST (1-800-843-5678). Reference case number <a href="http://www.missingkids.org/poster/NCMC/' + person.caseNumber + '/1/screen">' + person.caseNumber + "</a>.";
 				}
 			}
 			request.open("GET", "http://localhost:5000/query/" + abbr, true);								
