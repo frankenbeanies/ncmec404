@@ -121,7 +121,7 @@
 					console.log(request.responseText);
 				}
 			}
-			request.open("GET", "http://www.missingkids.com/missingkids/servlet/JSONDataServlet?action=publicSearch&searchLang=en_US&search=new&subjToSearch=child&missState=" + abbr + "&missCountry=US", true);								
+			request.open("GET", "http://localhost:5000/query/" + abbr, true);								
 			request.send(null);		
 		}
 	</script>
