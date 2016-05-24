@@ -14,7 +14,7 @@ License
 404.html
 --------
 
-To use 404.html in your own project, simply add it and link it in. It's that simple. There are no external dependencies, and JQuery is not required!
+To use 404.html in your own project, simply add it and link it in. It's that simple. There are no external dependencies, and JQuery is not required! The page is purposefully minimally styled, allowing you to integrate it into your existing site with little effort.
 
 api
 ---
