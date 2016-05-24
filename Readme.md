@@ -11,13 +11,16 @@ License
 
 [MIT](https://github.com/frankenbeanies/deck/blob/master/LICENSE)
 
-Usage (404.html)
-------------
+404.html
+--------
 
-To use 404.html in your own project, simply add it and link it in. It's that simple. There are no external dependencies, 
-and JQuery is not required!
+To use 404.html in your own project, simply add it and link it in. It's that simple. There are no external dependencies, and JQuery is not required!
 
-Usage (api)
------------
+api
+---
 
-The api is built as a Flask (Python) web service. It is ready for instant deployment to a heroku instance. Please see api/requirements.txt for a list of virtualenv requirements. 
+The api is built as a Flask (Python) web service. It is ready for instant deployment to a heroku instance. Endpoints may be added in the future, but once one is added to the main branch, it will not be removed. The current endpoints are as follows: 
+
+>/query/*state_abbreviation*
+
+This endpoint returns a list of up to 10 missing persons from the given state. state_abbreviation should be the capitalized two-letter abbreviation for a state, e.g. Connecticut = CT, New York = NY, etc.  
